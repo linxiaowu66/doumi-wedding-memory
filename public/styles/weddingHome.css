@@ -986,7 +986,9 @@ input[placeholder]::-webkit-input-placeholder {
 }
 
 #pagination {
-  padding-left: 37%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .pagination-lg > li > a {
@@ -998,10 +1000,6 @@ input[placeholder]::-webkit-input-placeholder {
   #rsvp,
   #blessing-info {
     padding: 15px;
-  }
-
-  #pagination {
-    padding-left: 23%;
   }
 }
 
@@ -1027,10 +1025,6 @@ input[placeholder]::-webkit-input-placeholder {
 
   h3.media-heading {
     font-size: 1.75rem;
-  }
-
-  #pagination {
-    padding-left: 6%;
   }
 
   .pagination-lg > li > a {
