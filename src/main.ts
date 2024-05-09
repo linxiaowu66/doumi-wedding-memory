@@ -49,7 +49,7 @@ const { format } = winston;
         if (process.env.NODE_ENV !== ENV.LOCAL) {
           transports.push(
             new DailyRotateFile({
-              filename: `${process.env.LOGGER_PATH}/anser-%DATE%.log`,
+              filename: `${process.env.LOGGER_PATH}/doumi-wedding-%DATE%.log`,
               frequency: '1d',
               datePattern: 'YYYY-MM-DD',
               zippedArchive: true,
@@ -59,7 +59,7 @@ const { format } = winston;
           );
           transports.push(
             new DailyRotateFile({
-              filename: `${process.env.LOGGER_PATH}/anser-error-%DATE%.log`,
+              filename: `${process.env.LOGGER_PATH}/doumi-wedding-error-%DATE%.log`,
               level: 'error',
               frequency: '1d',
               datePattern: 'YYYY-MM-DD',
@@ -80,7 +80,7 @@ const { format } = winston;
               format: 'YYYY-MM-DD HH:mm:ss.SSS',
             }),
             format.label({
-              label: '飞步',
+              label: '豆米',
             }),
 
             format.splat(),
@@ -138,15 +138,17 @@ async function bootstrap() {
   app.setBaseViewsDir(join(__dirname, '../..', 'views'));
   app.setViewEngine('ejs');
 
-  // open with 3000
-  const swaggerConfig = new DocumentBuilder()
-    .setTitle('豆米婚礼纪念')
-    .setDescription('纪念网站的API')
-    .setVersion('1.0.0')
-    // .addBearerAuth()
-    .build();
-  const swaggerDocument = SwaggerModule.createDocument(app, swaggerConfig);
-  SwaggerModule.setup('swagger', app, swaggerDocument);
+  if (process.env.NODE_ENV === 'local') {
+    // open with 8080/swagger
+    const swaggerConfig = new DocumentBuilder()
+      .setTitle('豆米婚礼纪念')
+      .setDescription('纪念网站的API')
+      .setVersion('1.0.0')
+      // .addBearerAuth()
+      .build();
+    const swaggerDocument = SwaggerModule.createDocument(app, swaggerConfig);
+    SwaggerModule.setup('swagger', app, swaggerDocument);
+  }
 
   await app.listen(8080);
 }
