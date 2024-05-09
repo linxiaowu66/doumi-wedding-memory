@@ -1,0 +1,59 @@
+<script src="js/vendor/jquery-2.2.4.min.js"></script>
+<script src="js/vendor/bootstrap.min.js"></script>
+<% if (title === '豆米的结婚纪念网站') { %>
+<script src="js/vendor/knob.js"></script>
+<script src="js/vendor/throttle.js"></script>
+<script src="js/vendor/classycountdown.js"></script>
+<script type="text/javascript" src="js/weddingHome.js"></script>
+<script type="text/javascript">
+  $(document).ready(function (){
+    if ($("#pagination")) {
+      var pagecount = <%= total %>;
+      var pagesize = <%= pageSize %>;
+      var pageIndex = <%= pageIndex %>;
+      var counts, pagehtml = "";
+      if (pagecount % pagesize == 0) {
+        counts = parseInt(pagecount / pagesize);
+      } else {
+        counts = parseInt(pagecount / pagesize) + 1;
+      }
+      //只有一页内容
+      if (pagecount <= pagesize) {
+        pagehtml = "";
+      }
+      //大于一页内容
+      if (pagecount > pagesize) {
+        if (pageIndex > 1) {
+          pagehtml += '<li><a id = "prePage">上一页</a></li>';
+        }
+        for (var i = 0; i < counts; i++) {
+          if (i >= (pageIndex - 3) && i < (pageIndex + 3)) {
+            if (i == pageIndex - 1) {
+              pagehtml += '<li class="active pageId"><a>' + (i + 1) + '</a></li>';
+            } else {
+              pagehtml += '<li><a class="pageId">' + (i + 1) + '</a></li>';
+            }
+
+          }
+        }
+        if (pageIndex < counts) {
+          pagehtml += '<li><a id="nextPage">下一页</a></li>';
+        }
+      }
+      $("#pagination").html(pagehtml);
+    }
+  });
+</script>
+<% } else if (title === '彼此遇见最美好的自己') { %>
+<script src="js/vendor/ZoomPic.js"></script>
+<script type="text/javascript" src="js/meetEachOther.js"></script>
+<% } else if (title === '相知,相爱前的蜕变与磨砺') { %>
+<script type="text/javascript" src="js/knowEachOther.js"></script>
+<script type="text/javascript" src="js/vendor/polyfills.js"></script>
+<script type="text/javascript" src="js/knowNavigator.js"></script>
+<% } else if (title === '相爱让我们执子之手、与子偕老') { %>
+<script src="js/loveEachOther.js"></script>
+<% } else if (title === '相守一生，相伴永久') { %>
+<script type="text/javascript" src="js/vendor/slider.js"></script>
+<script type="text/javascript" src="js/togetherAlways.js"></script>
+<% } %>

@@ -1,0 +1,198 @@
+<div id="love-time">
+  <div class="love-wrapper">
+    <div class="sub-header">
+      <span class="dianZhui-left">
+        <img
+          src="https://blogimage.5udou.cn/imgCommon/decor_left.png"
+          alt="img"
+        />
+      </span>
+      <span class="title">
+        <strong class="page-title">为爱计时</strong>
+      </span>
+      <span class="dianZhui-right">
+        <img
+          src="https://blogimage.5udou.cn/imgCommon/decor_right.png"
+          alt="img"
+        />
+      </span>
+    </div>
+    <h2>"唯有时间的永恒，才能记住我对你一生的守护"</h2>
+  </div>
+  <div class="clearfix">
+    <div class="countdown"></div>
+  </div>
+</div>
+<div class="container-fluid">
+  <div class="row about-us">
+    <div class="sub-header">
+      <span class="title">
+        <strong class="page-title">关于</strong>
+      </span>
+      <span class="little-img">
+        <img
+          src="https://blogimage.5udou.cn/imgCommon/decor-red.png"
+          alt="img"
+        />
+      </span>
+      <span class="title">
+        <strong class="page-title">我们</strong>
+      </span>
+    </div>
+    <h2>
+      "我们相识在一场培训课上，她点名了我，从此我们便有了一份弥足珍贵的爱情..."
+    </h2>
+    <div class="col-xs-4 col-sm-4 col-md-2 col-md-offset-2">
+      <div class="about-me">
+        <h2>林Sir</h2>
+        <p>
+          个不高，有担当；人不帅，优过之；事慢做，只求好；眼虽小，心可细。<img
+            src="https://blogimage.5udou.cn/imgCommon/juan.jpg"
+            height="40"
+            width="40"
+          />
+        </p>
+      </div>
+    </div>
+    <div class="col-xs-4 col-sm-4 col-md-4">
+      <div class="about-img">
+        <img src="https://blogimage.5udou.cn/weddingPhotos/150.jpg" />
+      </div>
+    </div>
+    <div class="col-xs-4 col-sm-4 col-md-2">
+      <div class="about-me">
+        <h2>Mrs张</h2>
+        <p>善良、勤劳、孝顺、活泼、俏皮...来自鹤庆的白族儿女Mrs张</p>
+      </div>
+    </div>
+  </div>
+  <div class="row" id="rsvp">
+    <div class="sub-header">
+      <span class="dianZhui-left">
+        <img
+          src="https://blogimage.5udou.cn/imgCommon/decor_left.png"
+          alt="img"
+        />
+      </span>
+      <span class="title">
+        <strong class="advice-title">留言与祝福</strong>
+      </span>
+      <span class="dianZhui-right">
+        <img
+          src="https://blogimage.5udou.cn/imgCommon/decor_right.png"
+          alt="img"
+        />
+      </span>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-6 col-md-offset-3">
+      <label
+        for="nick-name"
+        class="col-xs-2 col-md-2 col-sm-2 control-label"
+        id="content"
+        >昵称</label
+      >
+      <div class="col-xs-10 col-md-10 col-sm-10" id="content">
+        <input
+          type="text"
+          class="form-control"
+          id="nick-name"
+          name="nick-name"
+          placeholder="必填项"
+          required
+        />
+      </div>
+      <label
+        for="advice"
+        class="col-xs-2 col-md-2 col-sm-2 control-label"
+        id="content"
+        >建议</label
+      >
+      <div class="col-xs-10 col-md-10 col-sm-10" id="content">
+        <input
+          type="text"
+          class="form-control"
+          id="advice"
+          name="advice"
+          placeholder="对此网站有什么想吐槽的呢？(选填)"
+        />
+      </div>
+      <label
+        for="blessing"
+        class="col-xs-2 col-md-2 col-sm-2 control-label"
+        id="content"
+        >祝福</label
+      >
+      <div class="col-xs-10 col-md-10 col-sm-10" id="content">
+        <input
+          type="text"
+          class="form-control"
+          id="blessing"
+          name="blessing"
+          placeholder="来了总得留下什么吧？(必填)"
+          required
+        />
+      </div>
+      <div
+        class="col-sm-offset-2 col-sm-8 col-md-8 col-xs-8 col-xs-offset-2 col-md-offset-2"
+      >
+        <button
+          type="submit"
+          class="btn-default btn-lg"
+          id="save"
+          autocomplete="off"
+        >
+          送上祝福
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="row" id="blessing-info">
+    <div class="sub-header">
+      <span class="dianZhui-left">
+        <img
+          src="https://blogimage.5udou.cn/imgCommon/decor_left.png"
+          alt="img"
+        />
+      </span>
+      <span class="title">
+        <strong class="blessing-title">祝福榜</strong>
+      </span>
+      <span class="dianZhui-right">
+        <img
+          src="https://blogimage.5udou.cn/imgCommon/decor_right.png"
+          alt="img"
+        />
+      </span>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-6 col-md-offset-3">
+      <ul class="media-list">
+        <% if(records.length === 0) { %>
+        <div class="alert alert-danger" role="alert">
+          还没有祝福! 赶紧抢个沙发吧！
+        </div>
+        <% } else {records.forEach(function(record){ %>
+        <li class="media">
+          <a class="pull-left" href="#">
+            <img
+              class="media-object"
+              src="https://blogimage.5udou.cn/imgCommon/people.jpg "
+              alt="..."
+            />
+          </a>
+          <div class="media-body">
+            <h3 class="media-heading">
+              <%= record.nickname%>
+              <span>·<%= record.timeDescription %></span>
+            </h3>
+            <div id="blessing-text"><%= record.blessing%></div>
+          </div>
+        </li>
+        <% } ) }%>
+      </ul>
+      <ul class="pagination pagination-lg" id="pagination"></ul>
+    </div>
+  </div>
+</div>
+<div class="toast">
+  <p></p>
+</div>

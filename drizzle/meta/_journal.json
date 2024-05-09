@@ -1,0 +1,27 @@
+{
+  "version": "5",
+  "dialect": "mysql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1715170221968,
+      "tag": "0000_lazy_wilson_fisk",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1715233727223,
+      "tag": "0001_demonic_shooting_star",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1715234089878,
+      "tag": "0002_spicy_black_widow",
+      "breakpoints": true
+    }
+  ]
+}

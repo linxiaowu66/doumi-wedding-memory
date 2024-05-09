@@ -1,0 +1,537 @@
+@font-face {
+  font-family: 'Merienda';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/Merienda-Regular_0_wt.ttf');
+}
+a,
+abbr,
+acronym,
+address,
+article,
+aside,
+audio,
+b,
+basefont,
+bdo,
+big,
+blockquote,
+canvas,
+caption,
+center,
+cite,
+code,
+command,
+datalist,
+dd,
+del,
+details,
+dfn,
+dir,
+div,
+dl,
+dt,
+em,
+embed,
+fieldset,
+figcaption,
+figure,
+font,
+footer,
+form,
+frame,
+frameset,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+header,
+hgroup,
+i,
+iframe,
+img,
+ins,
+kbd,
+label,
+legend,
+li,
+map,
+mark,
+menu,
+meter,
+nav,
+noframes,
+noscript,
+object,
+ol,
+output,
+p,
+progress,
+q,
+rp,
+rt,
+ruby,
+s,
+samp,
+section,
+small,
+span,
+strike,
+strong,
+sub,
+summary,
+sup,
+table,
+tbody,
+td,
+tfoot,
+th,
+thead,
+time,
+tr,
+tt,
+u,
+ul,
+var,
+video,
+wbr {
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  color: inherit;
+  font-size: 100%;
+  font: inherit;
+  background: transparent;
+  vertical-align: baseline;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: rgb(186, 58, 81);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/*字体响应式布局*/
+html {
+  font-size: 20px;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  html {
+    font-size: 15px !important;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  html {
+    font-size: 10px !important;
+  }
+}
+.main-wrapper {
+  min-width: 1150px;
+}
+#header {
+  margin-top: 0px;
+  text-align: center;
+  font-family: 'Merienda';
+}
+
+#header h1 {
+  font-size: 3rem;
+}
+
+#header h2 {
+  font-size: 2rem;
+  line-height: 4rem;
+}
+
+.menu {
+  position: fixed;
+  top: 0px;
+  right: 10px;
+}
+
+.menu > div {
+  position: relative;
+  width: 226px;
+  height: 248px;
+  overflow: hidden;
+}
+
+.menu ul {
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  width: 234px;
+  height: 234px;
+  margin: 0 0 0 -117px;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.menu ul li {
+  float: left;
+  width: 74px;
+  height: 74px;
+  overflow: hidden;
+  margin: 2px;
+  background-color: #ceaeb4;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  border-radius: 8px;
+  -webkit-transition: background-color 0.5s;
+  -moz-transition: background-color 0.5s;
+  -o-transition: background-color 0.5s;
+  transition: background-color 0.5s;
+}
+
+.menu ul li:first-child {
+  margin-left: 78px;
+}
+
+.menu ul li:not(.divider):hover,
+.menu ul li.active {
+  background-color: #da9b14;
+}
+
+.menu ul li a {
+  display: table-cell;
+  width: 74px;
+  height: 74px;
+  text-align: center;
+  vertical-align: middle;
+  color: #e21b88;
+  text-decoration: none;
+}
+
+.menu ul li a span {
+  display: block;
+  width: 74px;
+  height: 74px;
+  overflow: hidden;
+  text-indent: -9px;
+  padding-top: 24px;
+  padding-left: 5px;
+  font-size: 1rem;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+.clearfix:after {
+  content: '';
+  display: block;
+  clear: both;
+  height: 0;
+  visibility: hidden;
+}
+
+#love {
+  width: 1150px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+#love ul,
+li {
+  list-style: none;
+}
+#love ul {
+  float: left;
+  width: 100%;
+  margin-bottom: 2px;
+  margin-top: 2px;
+}
+
+#love ul li img {
+  -webkit-transition: 1s;
+  -moz-transition: 1s;
+  transition: 1s;
+  z-index: 1;
+}
+#love ul .love-head {
+  float: left;
+  width: 100px;
+  height: 100px;
+  padding: 5px;
+}
+#love ul .love-head-em {
+  float: left;
+  width: 351px;
+  height: 100px;
+  padding: 5px;
+}
+#love ul .love-middle {
+  float: left;
+  width: 150px;
+  height: 100px;
+  padding: 5px;
+}
+
+#love ul .love-side {
+  float: left;
+  width: 100px;
+  height: 266px;
+  padding: 5px;
+}
+
+.love-side img {
+  margin-bottom: 10px;
+}
+
+#love ul .love-center {
+  float: left;
+  width: 263px;
+  height: 263px;
+  padding: 5px;
+}
+
+#love ul .love-center {
+  float: left;
+  width: 263px;
+  height: 263px;
+  padding: 5px;
+}
+
+#love ul .love-mid-em {
+  float: left;
+  width: 152px;
+  height: 100px;
+  padding: 5px;
+}
+
+#love ul .love-mid-center {
+  float: left;
+  width: 266px;
+  height: 100px;
+  padding: 5px;
+}
+
+#love ul .love-btm-em {
+  float: left;
+  width: 251px;
+  height: 152px;
+  padding: 5px;
+}
+
+#love ul .love-btm-center {
+  float: left;
+  width: 268px;
+  height: 152px;
+  padding: 5px;
+}
+
+#love ul .love-btm {
+  float: left;
+  width: 444px;
+  height: 100px;
+  padding: 5px;
+}
+#love ul .love-bottom {
+  float: left;
+  width: 100px;
+  height: 100px;
+  padding: 5px;
+}
+
+.love-head img {
+  width: 100%;
+}
+.love-side img {
+  width: 100%;
+}
+
+.love-center img {
+  width: 100%;
+}
+.love-mid-center img {
+  width: 100%;
+}
+
+.love-bottom img {
+  width: 100%;
+}
+
+#love ul li img:hover {
+  -webkit-transform: scale(2);
+  -ms-transform: scale(2);
+  transform: scale(2);
+  box-shadow: 2px 2px 13px rgba(204, 204, 204, 0.6);
+  z-index: 10;
+}
+
+.image-slider {
+  width: 906px;
+  height: 260px;
+  margin: 0 auto;
+  padding: 14px 16px 0px 16px;
+  position: relative;
+}
+.image-slider-back,
+.image-slider-forward {
+  float: left;
+  width: 23px;
+  height: 98px;
+  color: White;
+  position: relative;
+  top: 45px;
+  cursor: pointer;
+}
+.image-slider-back {
+  background-image: url(https://blogimage.5udou.cn/imgCommon/feel3.png);
+  background-repeat: no-repeat;
+  background-position: left;
+}
+.image-slider-forward {
+  background-image: url(https://blogimage.5udou.cn/imgCommon/feel4.png);
+  background-repeat: no-repeat;
+  background-position: right;
+}
+.image-slider-contents {
+  width: 755px;
+  height: 164px;
+  float: left;
+  position: relative;
+  overflow: hidden;
+}
+
+.image-slider-contents .contents-wrapper {
+  position: absolute;
+  padding-top: 18px;
+  left: 0;
+}
+.image-slider-contents .outer {
+  background-color: #fff;
+  float: left;
+  width: 156px;
+  height: 186px;
+  margin: 0px 15px;
+  cursor: pointer;
+  position: relative;
+}
+.spic {
+  width: 156px;
+  height: 186px;
+  text-align: center;
+  color: #333;
+  float: left;
+}
+.image-slider-contents img {
+  width: 156px;
+  height: 145px;
+  margin: 0 auto;
+}
+.spic a {
+  display: block;
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}
+.visible {
+  display: block;
+}
+.thumbnail-active {
+  filter: alpha(opacity=100);
+  opacity: 1;
+  cursor: pointer;
+}
+.thumbnail-inactive {
+  filter: alpha(opacity=20);
+  opacity: 0.2;
+  cursor: pointer;
+}
+
+.preview {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background-color: #ba3a51;
+  padding: 2px;
+  border: solid 1px #ba3a51;
+  box-shadow: 0 0 10px 2px #ba3a51;
+}
+.preview .img-large {
+  width: 500px;
+  z-index: 1000;
+  margin: 0 auto;
+}
+.preview .img-large .left {
+  position: absolute;
+  left: 8px;
+  top: 250px;
+  width: 16px;
+  height: 24px;
+  z-index: 1000;
+  background: url(https://blogimage.5udou.cn/imgCommon/feel3.png) no-repeat;
+  cursor: pointer;
+}
+.preview .img-large .right {
+  position: absolute;
+  left: 485px;
+  top: 250px;
+  z-index: 1000;
+  width: 16px;
+  height: 24px;
+  background: url(https://blogimage.5udou.cn/imgCommon/feel4.png) no-repeat;
+  cursor: pointer;
+}
+
+.preview .img-large img {
+  width: 500px;
+  height: 500px;
+}
+
+.outer {
+  border: solid 1px #ee2c2c;
+}
+
+footer {
+  background: #333;
+  color: #fff;
+  min-height: 100px;
+  text-align: center;
+}
+
+ul.share-group {
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+  padding: 50px;
+}
+
+.share-group li {
+  display: inline-block;
+  padding: 10px;
+  font-size: 1.25rem;
+}
+.share-group li a {
+  text-decoration: none;
+}
+
+.copy {
+  padding-bottom: 20px;
+  font-size: 1.25rem;
+}
+.beiAn {
+  padding-bottom: 10px;
+  font-size: 1rem;
+}
+
+@media screen and (max-width: 767px) {
+  ul.share-group {
+    padding: 10px;
+  }
+}

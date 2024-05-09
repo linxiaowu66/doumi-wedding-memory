@@ -1,0 +1,25 @@
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="Keywords" content="结婚 纪念 属于你我 婚纱照 唯美 爱" />
+<meta name="Description"
+content="属于你我的一个结婚纪念网站，珍藏的都是我们美美的回忆。无论是富贵和贫贱、健康和疾病，我都会说"I
+DO!"^~^">
+<title><%= title%></title>
+<link href="styles/bootstrap.min.css" rel="stylesheet" />
+<!--[if lt IE 9]>
+  <script src="js/html5shiv.js"></script>
+  <script src="js/respond.min.js"></script>
+<![endif]-->
+<% if (title === '豆米的结婚纪念网站') { %>
+<link rel="stylesheet" type="text/css" href="styles/weddingHome.css" />
+<link rel="stylesheet" type="text/css" href="styles/classycountdown.css" />
+<%} else if (title === '彼此遇见最美好的自己') { %>
+<link rel="stylesheet" type="text/css" href="styles/MeetEachOther.css" />
+<%} else if (title === '相知,相爱前的蜕变与磨砺') { %>
+<link rel="stylesheet" type="text/css" href="styles/knowEachOther.css" />
+<%} else if (title === '相爱让我们执子之手、与子偕老') { %>
+<link rel="stylesheet" type="text/css" href="styles/loveEachOther.css" />
+<%} else if (title === '相守一生，相伴永久') { %>
+<link rel="stylesheet" type="text/css" href="styles/togetherAlways.css" />
+<%} %>

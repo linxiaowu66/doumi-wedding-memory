@@ -1,0 +1,1 @@
+ALTER TABLE `Blessing` MODIFY COLUMN `createDate` timestamp(3) NOT NULL DEFAULT now(3);
