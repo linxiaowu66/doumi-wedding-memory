@@ -28,7 +28,26 @@ const expressLayouts = require('express-ejs-layouts');
 const { xss } = require('express-xss-sanitizer');
 
 const { format } = winston;
+const { combine } = winston.format;
 
+const baseFormat = combine(
+  format.errors({ stack: true }),
+  format.timestamp({
+    format: 'YYYY-MM-DD HH:mm:ss.SSS',
+  }),
+  format.label({
+    label: '豆米',
+  }),
+
+  format.splat(),
+  format.printf((info) => {
+    if (info.stack) {
+      return `${info.timestamp} ${info.level}: [${info.label}]${info.stack}`;
+    }
+    return `${info.timestamp} ${info.level}: [${info.label}]${info.message}`;
+  }),
+  // format.prettyPrint(),
+);
 @Module({
   imports: [
     ConfigModule.forRoot({
@@ -43,6 +62,8 @@ const { format } = winston;
         const transports: winston.transport[] = [
           new winston.transports.Console({
             level: 'info',
+            // 这里还有顺序差别的
+            format: combine(format.colorize({ level: true }), baseFormat),
           }),
         ];
 
@@ -73,25 +94,7 @@ const { format } = winston;
         return {
           exitOnError: false,
           // defaultMeta: { service: 'aaaa' },
-          format: format.combine(
-            format.colorize(),
-            format.errors({ stack: true }),
-            format.timestamp({
-              format: 'YYYY-MM-DD HH:mm:ss.SSS',
-            }),
-            format.label({
-              label: '豆米',
-            }),
-
-            format.splat(),
-            format.printf((info) => {
-              if (info.stack) {
-                return `${info.timestamp} ${info.level}: [${info.label}]${info.stack}`;
-              }
-              return `${info.timestamp} ${info.level}: [${info.label}]${info.message}`;
-            }),
-            // format.prettyPrint(),
-          ),
+          format: baseFormat,
 
           transports,
         };
