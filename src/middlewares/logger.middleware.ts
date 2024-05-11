@@ -17,8 +17,8 @@ export class LoggerMiddleware implements NestMiddleware {
         method === 'GET'
           ? `Query => ${JSON.stringify(request.query)}`
           : JSON.stringify(request.body).length > 5000 // 防止请求体过大造成日志过长
-            ? `Body => ${JSON.stringify(request.body).slice(0, 5000)}...`
-            : `Body => ${JSON.stringify(request.body)}`
+          ? `Body => ${JSON.stringify(request.body).slice(0, 5000)}...`
+          : `Body => ${JSON.stringify(request.body)}`
       }`,
     );
 
@@ -27,7 +27,9 @@ export class LoggerMiddleware implements NestMiddleware {
       const uuid = response.getHeader('x-correlation-id');
 
       this.logger.log(
-        `ENDING ${method} ${originalUrl} with ${uuid} [${statusCode}] cost ${Date.now() - now}ms`,
+        `ENDING ${method} ${originalUrl} with ${uuid} [${statusCode}] cost ${
+          Date.now() - now
+        }ms`,
       );
     });
 

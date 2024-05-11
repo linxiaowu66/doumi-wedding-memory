@@ -18,12 +18,12 @@
 
 * 初始化本地MYSQL数据库；
 
-```mysql
+```sql
 create database douMiWedding CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
 
 use mysql;
 
-CREATE USER 'test'@'%' IDENTIFIED BY 'test'; 
+CREATE USER 'test123'@'%' IDENTIFIED BY 'test123'; 
 
 GRANT ALL ON douMiWedding.* TO 'test123'@'%';
 
